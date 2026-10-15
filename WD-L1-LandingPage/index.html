@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VasiStyle — discover timeless fashion and modern luxury.">
+  <title>VasiStyle | Wear Your Identity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">
+    ✦ NEW SEASON, NEW YOU — FREE SHIPPING ON ORDERS OVER ₹1,999
+  </div>
+
+  <header class="navbar">
+    <a href="#home" class="logo">VASI<span>STYLE</span><i>.</i></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#collection" class="nav-cta">Explore Collection ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> THE NEW ERA OF EVERYDAY LUXURY</p>
+        <h1>Wear Your<br> <em>Identity.</em></h1>
+        <p class="hero-description">
+          Fashion isn't about fitting in. It's about showing up as the
+          most authentic version of you. Discover pieces that speak your language.
+        </p>
+        <div class="hero-actions">
+          <a href="#collection" class="btn btn-gold">Discover Collection <span>↗</span></a>
+          <a href="#story" class="text-link">Our philosophy <span>→</span></a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>2.5K+</strong><span>Happy customers</span></div>
+          <div><strong>120+</strong><span>Unique styles</span></div>
+          <div><strong>4.9/5</strong><span>Customer rating</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=85"
+            alt="Elegant fashion model wearing a stylish outfit">
+          <div class="image-label">
+            <span>THE AUTUMN EDIT</span>
+            <strong>Quiet luxury.<br>Bold presence.</strong>
+          </div>
+        </div>
+        <div class="floating-badge">LESS, BUT<br><span>BETTER.</span></div>
+        <div class="vertical-text">STYLE IS A STATEMENT — VasiStyle 2026</div>
+      </div>
+    </section>
+
+    <section class="brand-strip">
+      <span>DESIGNED FOR YOU</span>
+      <span>✦</span>
+      <span>MADE TO STAND OUT</span>
+      <span>✦</span>
+      <span>TIMELESS BY DESIGN</span>
+      <span>✦</span>
+      <span>YOUR STYLE, YOUR STORY</span>
+    </section>
+
+    <section class="collection section" id="collection">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CURATED FOR THE BOLD</p>
+          <h2>Find your <em>signature.</em></h2>
+        </div>
+        <p>Thoughtfully selected essentials.<br>Made for every version of you.</p>
+      </div>
+
+      <div class="filter-bar" aria-label="Filter products">
+        <button class="filter-btn active" data-filter="all">All pieces</button>
+        <button class="filter-btn" data-filter="women">Women</button>
+        <button class="filter-btn" data-filter="men">Men</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card" data-category="women">
+          <div class="product-image">
+            <span class="product-tag">BESTSELLER</span>
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=650&q=80" alt="Elegant beige fashion outfit" loading="lazy">
+            <button class="quick-add" data-product="The Signature Blazer" data-price="2499">Add to bag +</button>
+          </div>
+          <div class="product-info"><div><h3>The Signature Blazer</h3><p>Structured · Timeless</p></div><strong>₹2,499</strong></div>
+        </article>
+
+        <article class="product-card" data-category="men">
+          <div class="product-image">
+            <span class="product-tag">NEW ARRIVAL</span>
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=650&q=80" alt="Modern menswear styling" loading="lazy">
+            <button class="quick-add" data-product="The Everyday Essential" data-price="1799">Add to bag +</button>
+          </div>
+          <div class="product-info"><div><h3>The Everyday Essential</h3><p>Minimal · Effortless</p></div><strong>₹1,799</strong></div>
+        </article>
+
+        <article class="product-card" data-category="accessories">
+          <div class="product-image">
+            <span class="product-tag">EDITOR'S PICK</span>
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=650&q=80" alt="Elegant designer handbag" loading="lazy">
+            <button class="quick-add" data-product="The Luxe Carryall" data-price="2199">Add to bag +</button>
+          </div>
+          <div class="product-info"><div><h3>The Luxe Carryall</h3><p>Refined · Functional</p></div><strong>₹2,199</strong></div>
+        </article>
+
+        <article class="product-card" data-category="accessories">
+          <div class="product-image">
+            <span class="product-tag">LIMITED EDITION</span>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=650&q=80" alt="Minimal wristwatch accessory" loading="lazy">
+            <button class="quick-add" data-product="The Classic Timepiece" data-price="1499">Add to bag +</button>
+          </div>
+          <div class="product-info"><div><h3>The Classic Timepiece</h3><p>Classic · Modern</p></div><strong>₹1,499</strong></div>
+        </article>
+      </div>
+      <p class="cart-message" id="cartMessage" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story-image">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85" alt="Friends exploring personal fashion styles" loading="lazy">
+      </div>
+      <div class="story-content">
+        <p class="eyebrow">MORE THAN WHAT YOU WEAR</p>
+        <h2>Style fades.<br><em>Identity stays.</em></h2>
+        <p>
+          VasiStyle was created for people who see clothing as more than fabric.
+          We believe great style starts with confidence, thoughtful choices,
+          and the freedom to be yourself.
+        </p>
+        <a href="#contact" class="btn btn-gold">Get to know us ↗</a>
+      </div>
+    </section>
+
+    <section class="newsletter section" id="contact">
+      <p class="eyebrow">A LITTLE GOLD IN YOUR INBOX</p>
+      <h2>Stay in the <em>loop.</em></h2>
+      <p>Get new drops, style inspiration and exclusive offers.</p>
+      <form id="newsletterForm" class="newsletter-form">
+        <label class="sr-only" for="email">Your email address</label>
+        <input type="email" id="email" placeholder="Enter your email address" required>
+        <button class="btn btn-gold" type="submit">Join the list ↗</button>
+      </form>
+      <p id="newsletterMessage" class="newsletter-message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo">VASI<span>STYLE</span><i>.</i></a>
+    <p>Wear what makes you, YOU.</p>
+    <div class="footer-links"><a href="#collection">Shop</a><a href="#story">About</a><a href="#contact">Contact</a></div>
+    <p class="copyright">© 2026 VasiStyle.</p>
+  </footer>
+</body>
+</html>
