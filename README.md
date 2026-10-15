@@ -171,3 +171,90 @@ You can deploy this portfolio for free using **GitHub Pages**.
 ⭐ If you like my portfolio, feel free to explore my repositories and connect with me!
 
 **Made with 💜 by Vasika K**
+
+TASK 3
+
+# 🌡️ Temperature Converter
+
+A simple, responsive Temperature Converter web application built using **HTML, CSS, and JavaScript**. It allows users to convert temperatures between Celsius, Fahrenheit, and Kelvin with input validation and absolute zero protection.
+
+## ✨ Features
+
+- 🌡️ Enter a temperature using the input field.
+- 🔄 Convert between Celsius (°C), Fahrenheit (°F), and Kelvin (K).
+- 🧮 Display accurate conversion results.
+- ⚠️ Show error messages for empty or invalid input.
+- 🛡️ Validate absolute zero limits:
+  - Celsius: -273.15°C
+  - Fahrenheit: -459.67°F
+  - Kelvin: 0 K
+- 🧹 Clear the input and reset the converter.
+- ⌨️ Press Enter to convert the temperature.
+- 📱 Responsive design for desktop and mobile devices.
+- 🎨 Orange and gray color theme.
+
+## 🛠️ Technologies Used
+
+- **HTML5** — Application structure
+- **CSS3** — Styling and responsive layout
+- **JavaScript** — Temperature conversion and validation
+
+## 📁 Project Structure
+
+```text
+temperature-converter/
+│
+└── index.html
+```
+
+All HTML, CSS, and JavaScript code is contained in a single file.
+
+## 🚀 How to Run
+
+1. Download or clone this repository.
+2. Open the project folder.
+3. Double-click `index.html`.
+4. The application opens in your web browser.
+5. Enter a temperature, select the input and output units, and click **Convert Temperature**.
+
+No installation or Live Server is required.
+
+## 🧮 Conversion Formulas
+
+**Celsius to Fahrenheit**
+
+```text
+°F = (°C × 9/5) + 32
+```
+
+**Fahrenheit to Celsius**
+
+```text
+°C = (°F - 32) × 5/9
+```
+
+**Celsius to Kelvin**
+
+```text
+K = °C + 273.15
+```
+
+**Kelvin to Celsius**
+
+```text
+°C = K - 273.15
+```
+
+The application converts through Celsius to support all combinations of the three temperature units.
+
+## 🛡️ Input Validation
+
+The application checks that:
+- A temperature is entered.
+- The input is a valid finite number.
+- The entered temperature is not below absolute zero for the selected unit.
+
+## 🎯 Project Objective
+
+The objective of this project is to build a beginner-friendly web application that demonstrates fundamental frontend development concepts, mathematical calculations, input validation, and responsive user interface design.
+
