@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #e5e5e5;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            padding: 28px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px #0002;
+        }
+
+        h1 {
+            color: #f97316;
+            text-align: center;
+            font-size: 27px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #444;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #f97316;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ea580c;
+        }
+
+        #result {
+            padding: 14px;
+            margin-top: 18px;
+            border-radius: 8px;
+            background: #f3f4f6;
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+
+        .error {
+            color: #dc2626;
+        }
+
+        .success {
+            color: #15803d;
+        }
+
+        .secondary {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>🌡️ Temperature Converter</h1>
+
+        <label for="temp">Enter Temperature</label>
+        <input
+            type="number"
+            id="temp"
+            placeholder="Example: 25"
+            step="any"
+        >
+
+        <label for="from">Convert From</label>
+        <select id="from">
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
+
+        <label for="to">Convert To</label>
+        <select id="to">
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="C">Celsius (°C)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
+
+        <button type="button" id="convert">Convert Temperature</button>
+        <button type="button" id="clear" class="secondary">Clear</button>
+
+        <p id="result" aria-live="polite">Your result will appear here.</p>
+    </div>
+
+    <script>
+        const tempInput = document.getElementById("temp");
+        const fromSelect = document.getElementById("from");
+        const toSelect = document.getElementById("to");
+        const result = document.getElementById("result");
+
+        const minimum = {
+            C: -273.15,
+            F: -459.67,
+            K: 0
+        };
+
+        const units = {
+            C: "°C",
+            F: "°F",
+            K: "K"
+        };
+
+        document.getElementById("convert").addEventListener("click", function () {
+            const input = tempInput.value.trim();
+            const value = Number(input);
+            const from = fromSelect.value;
+            const to = toSelect.value;
+
+            result.className = "";
+
+            // 1. Validate empty or invalid input
+            if (input === "" || !Number.isFinite(value)) {
+                result.textContent = "❌ Please enter a valid temperature.";
+                result.className = "error";
+                return;
+            }
+
+            // 2. Validate absolute zero in the selected input unit
+            if (value < minimum[from]) {
+                result.textContent =
+                    "❌ Below absolute zero! Minimum for " +
+                    fromSelect.options[fromSelect.selectedIndex].text +
+                    " is " + minimum[from] + " " + units[from] + ".";
+                result.className = "error";
+                return;
+            }
+
+            // 3. Convert input to Celsius
+            let celsius;
+
+            if (from === "C") {
+                celsius = value;
+            } else if (from === "F") {
+                celsius = (value - 32) * 5 / 9;
+            } else {
+                celsius = value - 273.15;
+            }
+
+            // 4. Convert Celsius to target unit
+            let converted;
+
+            if (to === "C") {
+                converted = celsius;
+            } else if (to === "F") {
+                converted = (celsius * 9 / 5) + 32;
+            } else {
+                converted = celsius + 273.15;
+            }
+
+            if (Math.abs(converted) < 1e-10) {
+                converted = 0;
+            }
+
+            result.textContent =
+                "✅ Result: " + Number(converted.toFixed(4)) +
+                " " + units[to];
+
+            result.className = "success";
+        });
+
+        document.getElementById("clear").addEventListener("click", function () {
+            tempInput.value = "";
+            fromSelect.value = "C";
+            toSelect.value = "F";
+            result.textContent = "Your result will appear here.";
+            result.className = "";
+            tempInput.focus();
+        });
+
+        tempInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                document.getElementById("convert").click();
+            }
+        });
+    </script>
+</body>
+</html>
